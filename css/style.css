@@ -260,7 +260,7 @@ a{
   .product-info p{
     color: #9098B1;
   }
-  hr{
+  hr.edit{
     background-color: #E5E8EA;
     height: 3px !important;
   }
@@ -281,6 +281,153 @@ a{
 #c5:checked ~ label.five{
     border: 2px solid var(--main-color);
 }
+
+.color-cart{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.btn-coupon{
+  background-color: #3F8087;
+  color: white;
+  border: none;
+}
+
+/* checkout */
+
+.progress-line{
+  display: flex;
+  margin: 20px 0;
+}
+.progress-line .step{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.progress-line .step p{
+  font-size: 23px;
+  font-weight: bold;
+  color: gray;
+  transition: 0.2s;
+}
+.progress-line .step p.active{
+  color: var(--main-color);
+}
+.progress-line .step .check{
+  position: absolute;
+  left: 47%;
+  top: 65%;
+  font-size: 15px;
+  display: none;
+}
+.progress-line .step .check.active{
+  display: block;
+  color: white;
+}
+.progress-line .step .bullet.active span{
+  display: none;
+}
+.progress-line .step .bullet{
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-color: gainsboro;
+  color: white;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+}
+.progress-line .step .bullet.active{
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+}
+.progress-line .step .bullet::before,
+.progress-line .step .bullet::after{
+  content: "";
+  width: 210px;
+  height: 3px;
+  background-color: gainsboro;
+  position: absolute;
+  bottom: 11px;
+  left: -215px;
+}
+.progress-line .step:last-child .bullet::before,
+.progress-line .step:last-child .bullet::after{
+  display: none;
+}
+@media (max-width:1200px) {
+  .progress-line .step .bullet::before,
+  .progress-line .step .bullet::after{
+      width: 175px;
+      left: -177px;
+  }
+}
+@media (max-width:992px) {
+  .progress-line .step .bullet::before,
+  .progress-line .step .bullet::after{
+      width: 180px;
+      left: -194px;
+  }
+  .progress-line .step .check{
+      left: 47%;
+  }
+}
+@media (max-width:768px) {
+  .progress-line .step .bullet::before,
+  .progress-line .step .bullet::after{
+      width: 135px;
+      left: -142px;
+  }
+  .progress-line .step .check{
+      left: 45.5%;
+  }
+  .progress-line .step p{
+    font-size: 15px;
+  }
+}
+@media (max-width:550px) {
+  .progress-line .step .bullet::before,
+  .progress-line .step .bullet::after{
+      width: 92px;
+      left: -105px;
+  }
+  .progress-line .step .check{
+      left: 45%;
+  }
+}
+.progress-line .step .bullet.active::after{
+  background-color: var(--main-color);
+  transform: scalex(0);
+  transform-origin: right;
+  animation: animateProgress 0.3s linear forwards;
+}
+@keyframes animateProgress {
+  100%{
+      transform: scaleX(1);
+  }
+}
+.form-outer{
+  overflow: hidden;
+}
+.form-outer .form{
+  display: flex;
+  width: 400%;
+}
+.form-outer .form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.custom-check1:checked ~ label.box-size{
+  border: 2px solid var(--main-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+/* .custom-check1{
+  display: none;
+} */
+
 
 /* start footer */
 .footer{
